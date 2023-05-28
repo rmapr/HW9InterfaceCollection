@@ -180,8 +180,12 @@ public class CollectionServiceImpl implements Collection {
 
     //    новий масив на 5 елементів більше
     private String[] createCopyFieldsOfArray(String[] source) {
-        String[] temp = new String[source.length + 5];
-        System.arraycopy(source, 0, temp, 0, source.length);
+        int newSize = (source.length * 3) / 2 + 1;
+        String[] temp = new String[newSize];
+//        System.arraycopy(source, 0, temp, 0, source.length);
+        for (int i = 0; i < source.length; i++){
+            temp[i] = source[i];
+        }
         return temp;
     }
 
